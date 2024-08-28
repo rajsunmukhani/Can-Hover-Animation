@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.banner{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: url(./images/bg.jpg);
+}
+
+.product{
+    height: 500px;
+    width: 500px;
+    /* background-color: yellow; */
+    position: absolute;
+    left: 50%;
+    bottom: 150px;
+    transform: translateX(-50%);
+    z-index: 1;
+    --left : 0px;
+    display: flex;
+    transition: 0.5s;
+}
+
+.soda{
+    background: var(--url) var(--left),url('./images/mockup.png');
+    background-size: auto 100%;
+    width: 250px;
+    aspect-ratio: 2/4;
+    /* background-color: rebeccapurple; */
+    background-blend-mode: multiply;
+    mask-image: url('./images/mockup.png');
+    mask-size: auto 100%;
+    transition: 0.7s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner .product:hover{
+    --left : -500px;
+    transform: translateX(-50%) translateY(-20px);
+}
+
+.rock{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.rock img{
+    position: absolute;
+    transition: 0.7s;
+}
+
+.rock img:nth-child(1){
+    left: -20%;
+    bottom: -10%;
+}
+.rock img:nth-child(2){
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5%;
+}
+.rock img:nth-child(3){
+    right: -10%;
+    bottom: -10%;
+    rotate: -30deg;
+}
+
+.banner .product .soda:nth-child(2){
+    opacity: 0;
+}
+
+.banner .product:hover .soda:nth-child(2){
+    opacity: 1;
+}
+
+.product:hover ~ .rock img:nth-child(2){
+    bottom: 25px;
+}
+
+.product:hover ~ .rock img:nth-child(1){
+    left: -10%;
+}
+
+.product:hover ~ .rock img:nth-child(3){
+    right: 0%;
+}

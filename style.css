@@ -97,3 +97,18 @@ body{
 .product:hover ~ .rock img:nth-child(3){
     right: 0%;
 }
+
+@media (max-width: 600px) {
+    .banner{
+        background-position: center;
+    }
+    .rock img:nth-child(1){
+        display: none;
+    }
+    .rock img:nth-child(3){
+        display: none;
+    }
+    .rock{
+        width: 100%;
+    }
+}
